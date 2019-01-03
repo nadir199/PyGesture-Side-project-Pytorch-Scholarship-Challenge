@@ -38,8 +38,12 @@ pip install opencv-python
 * Go to the command line and run :`python program.py`
 * The program is now running ! Try one of the gestures facing the camera to trigger the actions ! :) 
 * Have fun !
+* When you're done just press `Ctrl + C` in the command line to stop the program !
+* Don't forget to turn your antivirus back on :)
 
 ## How do I trigger actions ?
 * Just make one of the gestures in front of the camera once the program runs :)
 * Try not to be in a dark room.
 * Don't stay too far from the camera, stay at a natural position.
+
+
