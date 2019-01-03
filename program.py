@@ -117,7 +117,7 @@ while True:
         prob,pred=F.softmax(model(camera_capture),dim=1).topk(1,dim=1)
 
     #If we're certain of that gesture
-    if(prob.item()>0.8):
+    if(prob.item()>0.75):
         print(idx_to_class[pred.item()], " with probability : ",prob.item())
         if(idx_to_class[pred.item()]!="nothing"):
             with open('settings.json', 'r') as f:
