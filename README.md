@@ -3,9 +3,8 @@ This is a python app associated with a flask web app for associating gestures to
 # How to use it ?
 ## What to install ?
 You need to have :
-- Python 3.6 or Higher installed
-- torch installed.
-- Google Chrome install (if you want website opening actions)
+- *Python 3.6* or Higher installed
+- *torch* installed.
 
 ## Python libraries
 ```
@@ -14,13 +13,15 @@ pip install keyboard
 ```
 
 ## How to run the program
-- Go to the environment where you installed all the dependencies
+- Go to the environment where you installed all the dependencies (Maybe Anaconda prompt)
 - Go to the command line and run the command according to your OS :
-        - Linux or Mac run : export FLASK_APP=index.py
-        - Windows : set FLASK_APP=index.py
+        - Linux or Mac run : >export FLASK_APP=index.py
+        - Windows : >set FLASK_APP=index.py
 - Run this command in the command line : 
 >flask run
-- There are 2 available gesture : 
+- You will get a link in the command line, generally http://127.0.0.1:5000 , Open it in your browser.
+- Here, in this web app you can set the actions you want for each of the listed signs.
+- There are 2 available gestures : 
          - Fist
          - High five
 - There are 3 available types of actions : 
@@ -37,5 +38,5 @@ pip install keyboard
 - Go to the command line and run :
 >python program.py
 
-- The program is now running ! Try one of the gestures to trigger the actions ! :) 
+- The program is now running ! Try one of the gestures facing the camera to trigger the actions ! :) 
 - Have fun !
