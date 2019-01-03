@@ -63,7 +63,7 @@ class Network(nn.Module):
     return x
 
 model.classifier=Network()
-model=model.cuda()
+model=model
 
 #Saving and loading models
 # TODO: Train your network
@@ -72,11 +72,11 @@ def save_model(model,minimum_loss,filename):
   torch.save({"minloss":minimum_loss,"state":st},filename)
 
 def load_model(filename):
-  return torch.load(filename)
+  return torch.load(filename,map_location="cpu")
 
 #Importing the trained model
 chpt=load_model("net.pt")
-model.load_state_dict(chpt["state"])
+model.load_state_dict(chpt["state"],strict=False)
 
 #Get the program running
 # Camera 0 is the integrated web cam on my netbook
@@ -110,7 +110,7 @@ while True:
     im = Image.fromarray(camera_capture)
     processed=test_transforms(im)
     #print(processed)
-    camera_capture = processed.unsqueeze(0).type(torch.cuda.FloatTensor)
+    camera_capture = processed.unsqueeze(0).type(torch.FloatTensor)
 
     #Process using pytorch and get type of gesture
     with torch.no_grad():
