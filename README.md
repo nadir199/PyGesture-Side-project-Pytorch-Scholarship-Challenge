@@ -10,6 +10,7 @@ You need to have :
 ```
 pip install flask
 pip install keyboard
+pip install opencv-python
 ```
 
 ## How to run the program
