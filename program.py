@@ -29,7 +29,7 @@ test_transforms = transforms.Compose([transforms.Resize(225),
 idx_to_class={ 0:'A', 1:'B', 2:'nothing'}
 
 #Pretrained model densenet161
-model = models.densenet161(pretrained=True)
+model = models.densenet161()
 
 #Creating the classifier part
 #Freezing the parameters
