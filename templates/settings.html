@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1 style="font-family:Abel;">Settings</h1>
+    {% if changed=="True" %}
+      <div class="alert alert-success" role="alert">
+        The new settings have been saved successfully !
+      </div>
+    {% endif %}
+    <form class="" action="" method="post">
+      <button class="btn btn-large btn-danger" style="float:right" type="submit" name="button">Save Settings</button>
+      <div class="row">
+        {% set count = namespace(i=0) %}
+        {% for setting in settings %}
+
+          <div class="form-group col-lg-6">
+              <img class="img-fluid col-lg-3" style="height:200px; width:100%;" src="{{url_for('static', filename='img/gesture/{}.png'.format(setting['gesture']))}}" alt="">
+              <div class="col-lg-12">
+                <select class="form-control col-lg-12" name="type_{{ count.i }}" {{ "readonly" if setting['gesture']=="C" else ""}} >
+                  <option value="url" {{ "selected" if(setting['type']=="url") else""}}>Open a Website</option>
+                  <option value="key" {{ "selected" if(setting['type']=="key") else""}}>Press a key</option>
+                  <option value="phrase" {{ "selected" if(setting['type']=="phrase") else""}}>Write a phrase</option>
+                </select>
+                <input name="value_{{ count.i }}" class="form-text col-lg-12" value="{{setting['value'] if setting['gesture']!="C" else "Sorry ! This Gesture is not implemented yet :(" }}" {{ "readonly" if setting['gesture']=="C" else ""}}/>
+              </div>
+          </div>
+          {% set count.i = count.i + 1 %}
+        {% endfor %}
+
+      </div>
+
+    </form>
+
+{% endblock content %}

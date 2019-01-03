@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>PyGest</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+  </head>
+  <body>
+    <div class="card text-center">
+      <div class="card-header">
+        <ul class="nav nav-tabs bg-dark card-header-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Settings</a>
+          </li>
+        </ul>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">What can I do here ?</h5>
+        <p class="card-text">You can choose what action to perform for each gesture! Three types of actions are available (for now) :
+          <ul>
+            <li style="list-style:none">Open a Website</li>
+            <li style="list-style:none">Type a phrase</li>
+            <li style="list-style:none">Press a key</li>
+          </ul>
+        </p>
+      </div>
+    </div>
+    <div class="container">
+    {% block content %}{% endblock %}
+    </div>
+    <script src="{{url_for('static', filename='js/jquery-3.3.1.slim.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/popper.min.js')}}"></script>
+    <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+  </body>
+</html>

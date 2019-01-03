@@ -1,0 +1,18 @@
+@font-face {
+  font-family: Abel;
+  src: url(' {{url_for('static', filename='Abel-Regular.ttf')}}');
+}
+html, body, form, fieldset, table, tr, td, img {
+    font-family: Abel;
+}
+
+input, button, select, textarea, optgroup, option {
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+}
+
+li{
+  list-style: none;
+}
