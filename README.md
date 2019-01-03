@@ -15,10 +15,9 @@ pip install keyboard
 ## How to run the program
 - Go to the environment where you installed all the dependencies (Maybe Anaconda prompt)
 - Go to the command line and run the command according to your OS :
-        - Linux or Mac run : >export FLASK_APP=index.py
-        - Windows : >set FLASK_APP=index.py
-- Run this command in the command line : 
->flask run
+        - Linux or Mac run : `export FLASK_APP=index.py`
+        - Windows : `set FLASK_APP=index.py`
+- Run this command in the command line : `flask run`
 - You will get a link in the command line, generally http://127.0.0.1:5000 , Open it in your browser.
 - Here, in this web app you can set the actions you want for each of the listed signs.
 - There are 2 available gestures : 
