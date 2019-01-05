@@ -4,7 +4,6 @@ from torch import nn
 from torch import optim
 import torch.nn.functional as F
 from torchvision import datasets, transforms, models
-import torchvision.transforms as transforms
 from torch.utils.data.sampler import SubsetRandomSampler
 
 import numpy as np
@@ -44,8 +43,6 @@ class Network(nn.Module):
     self.relu1=nn.ReLU()
     self.fc2=nn.Linear(n_hidden1,n_hidden2)
     self.relu2=nn.ReLU()
-    #self.fc3=nn.Linear(n_hidden2,n_hidden3)
-    #self.relu3=nn.ReLU()
     self.output=nn.Linear(n_hidden2,3)
     self.dropout=nn.Dropout(p=0.25)
 
@@ -55,10 +52,7 @@ class Network(nn.Module):
     x=self.dropout(x)
     x=self.relu2(self.fc2(x))
     x=self.dropout(x)
-    #x=self.relu3(self.fc3(x))
-    #x=self.dropout(x)
     x=self.output(x)
-    #x=F.log_softmax(x,dim=1)
 
     return x
 
@@ -75,7 +69,7 @@ def load_model(filename):
   return torch.load(filename,map_location="cpu")
 
 #Importing the trained model
-chpt=load_model("net.pt")
+chpt=load_model("net_signs.pt")
 model.load_state_dict(chpt["state"],strict=False)
 
 #Get the program running
