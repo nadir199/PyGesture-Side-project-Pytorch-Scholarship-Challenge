@@ -69,7 +69,7 @@ def load_model(filename):
   return torch.load(filename,map_location="cpu")
 
 #Importing the trained model
-chpt=load_model("net_signs.pt")
+chpt=load_model("net.pt")
 model.load_state_dict(chpt["state"],strict=False)
 
 #Get the program running
